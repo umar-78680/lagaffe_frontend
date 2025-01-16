@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import SwipeableViews from 'react-swipeable-views';
 import { Button, Collapse, Typography, Box } from '@mui/material';
 import { FaChevronCircleDown } from "react-icons/fa";
 import { FaArrowCircleUp } from "react-icons/fa";
@@ -127,23 +126,16 @@ const ProductDetail = () => {
         <div className="product-details">
             {/* Image Carousel using Material-UI Swipeable Views */}
             <div className="carousel-container">
-                <SwipeableViews index={currentImageIndex} onChangeIndex={handleImageChange}>
+                
                     {product.images && product.images.length > 0 ? (
-                        product.images.map((image, index) => (
-                            <div key={index} className="carousel-image">
-                                <img src={image.src} alt={`Product Image ${index + 1}`} />
+                        
+                            <div className="carousel-image">
+                                <img src={product.images[0].src} alt={`Product Image`} />
                             </div>
-                        ))
+                       
                     ) : (
                         <Typography variant="body1">No images available for this product.</Typography>
                     )}
-                </SwipeableViews>
-
-                {/* Carousel controls */}
-                <div className="carousel-controls">
-                    <Button onClick={() => handleImageChange(currentImageIndex === 0 ? product.images.length - 1 : currentImageIndex - 1)} className="carousel-btn" variant="outlined">◀</Button>
-                    <Button onClick={() => handleImageChange(currentImageIndex === product.images.length - 1 ? 0 : currentImageIndex + 1)} className="carousel-btn" variant="outlined">▶</Button>
-                </div>
             </div>
 
             {/* Product Details */}
