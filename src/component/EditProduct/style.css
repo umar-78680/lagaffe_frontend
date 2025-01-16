@@ -1,0 +1,67 @@
+/* Edit Product Form Container */
+.edit-product-container {
+    background: #222d35;
+    padding: 30px;
+    max-width: 600px;
+    margin: 30px auto;
+    border-radius: 12px;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.edit-product-title {
+    font-size: 2rem;
+    color: #f39c12;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Form Field Styling for number inputs */
+.form-field {
+    margin-bottom: 20px;
+}
+
+.form-input {
+    background-color: #333;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    padding: 12px;
+    border: none;
+    width: 100%;
+    outline: none;
+}
+
+/* Style when input gains focus */
+.form-input:focus {
+    border: 2px solid #f39c12; /* Yellow border on focus */
+}
+
+/* Save Button Style */
+.save-button {
+    background: linear-gradient(145deg, #f39c12, #e67e22);
+    color: white;
+    font-size: 1.1rem;
+    padding: 12px 0;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), inset 0 1px 2px rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+}
+
+.save-button:hover {
+    background: linear-gradient(145deg, #e67e22, #f39c12);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), inset 0 1px 3px rgba(255, 255, 255, 0.3);
+    transform: scale(1.05); /* Smooth zoom-in effect */
+}
+
+.save-button:active {
+    transform: scale(0.98); /* Slight compression effect when clicked */
+}
+
+.save-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5); /* Focus outline */
+}

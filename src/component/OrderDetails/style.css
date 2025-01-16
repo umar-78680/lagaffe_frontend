@@ -1,0 +1,91 @@
+/* Order Details Page Styles */
+
+.order-details-page {
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #203a43;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffcc00;
+  }
+  
+  .order-summary {
+    margin-bottom: 30px;
+  }
+  
+  .order-summary p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #eee;
+  }
+  
+  .order-items-section {
+    margin-bottom: 30px;
+  }
+  
+  .order-items-section h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #ffcc00;
+  }
+  
+  .order-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #2c5364;
+    border-radius: 5px;
+  }
+  
+  .order-item span {
+    font-size: 1rem;
+    color: #fff;
+  }
+  
+  .order-total {
+    margin-top: 20px;
+    font-size: 1.3rem;
+    color: #fff;
+    text-align: right;
+  }
+  
+  .edit-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(to top right, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    float: right;
+  }
+  
+  .edit-btn:hover {
+    background: linear-gradient(to top right, #365f6b, #1d4956, #273a45);
+    transform: scale(1.1);
+  }
+  
+  .edit-btn svg {
+    font-size: 1.2rem;
+  }
+  

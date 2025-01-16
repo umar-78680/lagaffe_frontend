@@ -1,0 +1,114 @@
+.homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    margin-top: 2rem;
+  }
+  
+  .content {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #fff;
+  }
+  
+  .date-container {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .date-container label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #fff;
+  }
+  
+  .date-container select {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    
+    color: #333;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .date-container .custom-range {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .date-container .custom-range label {
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .date-container .custom-range input {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    
+    color: white;
+    font-weight: bold;
+    outline: none;
+    color: black;
+  }
+
+  .custom-button
+  {
+    background: linear-gradient(to top right, #0f2027, #203a43, #2c5364);
+    color: #eee;
+    padding: 0 20px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+  
+  .revenue-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .card {
+    background: linear-gradient(to top right, #0f2027, #203a43, #2c5364);
+    color: #eee;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+  }
+  
+  .card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #ffcc00;
+  }
+  

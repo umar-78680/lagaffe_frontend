@@ -1,0 +1,229 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+    color: #eee;
+  }
+  
+  /* Expenses Page */
+  .expenses-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    margin-top: 2rem;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #fff;
+  }
+  
+  /* Add Expense Button */
+  .add-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 20px 0;
+    background: linear-gradient(to top right, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .add-button:hover {
+    background: linear-gradient(to top right, #365f6b, #1d4956, #273a45);
+  }
+  
+  /* Filter & Search */
+  .filter-container {
+    width: 62%;
+    margin-bottom: 20px;
+  }
+  
+  .filter-dropdown,
+  .search-input {
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #2c5364;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: auto;
+    max-width: 200px;
+  }
+  
+  .filter-dropdown:hover,
+  .filter-dropdown:focus,
+  .search-input:hover,
+  .search-input:focus {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .search-filter-container {
+    display: flex;
+    padding: 10px 20px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #2c5364;
+    color: #eee;
+    font-size: 16px;
+    outline: none;
+    margin-top: 2rem;
+    align-items: center;
+  }
+  
+  .search-icon {
+    color: #ccc;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .search-input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+  }
+  
+  .search-input::placeholder {
+    color: #ccc;
+  }
+  
+  /* Expenses List */
+  .expenses-list {
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .expense-item {
+    background-color: #203a43;
+    color: #eee;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: transform 1s ease, color 0.3s;
+    /* Allow content to wrap */
+  }
+  
+  .expense-item span {
+    font-size: 1rem;
+    flex: 1;
+    /* Ensures all elements take up equal width */
+    display: flex;
+    justify-content: center;
+    /* Align items in the center horizontally */
+    align-items: center;
+    /* Align items in the center vertically */
+    text-align: center;
+  }
+  
+  .edit-icon,
+  .delete-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.3s;
+    margin-left: 10px;
+    align-self: center;
+    /* Align the icon to center vertically */
+  }
+  
+  .edit-icon:hover {
+    transform: scale(1.1);
+    color: #ffcc00;
+  }
+  
+  .delete-icon:hover {
+    transform: scale(1.1);
+    color: red;
+  }
+  
+  /* Modal Styles */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: #203a43;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    position: relative;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #ffcc00;
+  }
+  
+  h3 {
+    text-align: center;
+    color: #fff;
+  }
+  
+  .modal .modal-content label {
+    font-size: 14px;
+    color: #fff;
+    display: block;
+    margin: 10px 0 5px;
+  }
+  
+  .modal .modal-content input[type="text"],
+  .modal .modal-content input[type="number"],
+  .modal .modal-content input[type="date"],
+  .modal .modal-content select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #2c5364;
+    color: #fff;
+    outline: none;
+  }
+  
+  .save-btn {
+    background: linear-gradient(to top right, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .save-btn:hover {
+    background: linear-gradient(to top right, #365f6b, #1d4956, #273a45);
+  }
+  

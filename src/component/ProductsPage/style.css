@@ -1,0 +1,112 @@
+.product-page {
+    padding: 20px;
+    cursor: pointer;
+    margin-top: 2rem;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 3rem !important;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  .no-item
+  {
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 100vh;
+  }
+  
+  .search-bar {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 10px 20px;
+    width: 50%;
+    border: none;
+    border-radius: 5px;
+    background: #2c5364;
+    color: #eee;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .search-bar::placeholder {
+    color: #ccc;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .product-card {
+    background: #203a43;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .product-image {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  
+  .product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align items horizontally at the center */
+    justify-content: center;
+    gap: 5px; /* Space between items */
+    text-align: center;
+    width: 100%; /* Ensure uniform width for all cards */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis for overflow */
+}
+
+  
+.product-name {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #ffcc00;
+  white-space: nowrap; /* Prevents wrapping */
+  overflow: hidden; /* Hides text that overflows the container */
+  text-overflow: ellipsis; /* Adds ellipsis (...) if text overflows */
+  width: 100%; /* Ensures it spans the container */
+}
+
+  
+  .product-sku {
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+  
+  .product-price {
+    font-size: 1.2rem;
+    color: #fff;
+  }
+
+
+  .pagination-container {
+    display: flex;
+    justify-content: center; /* Centers the pagination horizontally */
+    align-items: center; /* Optional: centers it vertically if within a specific height */
+    width: 100%;
+    height: auto; 
+  }
+
