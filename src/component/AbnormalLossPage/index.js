@@ -205,19 +205,50 @@ const AbnormalLossPage = () => {
 
   useEffect(() => {
 
-    const performanceSearch = () => {
+    const performanceSearch = async() => {
       const filterLoss = lossesDetails.filter(
         (loss) => loss.orderId.toLowerCase().includes(searchQuery.toLowerCase())
       );
 
       if (filterLoss.length > 0) {
         setFlteredLossed(filterLoss);
+        return
       }
-      else {
-        setFlteredLossed([]);
+      
+      // Handle remote search for valid query lengths (5-6 characters)
+      if (searchQuery.length < 5 || searchQuery.length > 6) {
+        setFlteredLossed([]); // Invalid query length, show no results
+        return;
       }
-    }
 
+      try {
+        setIsLoading(true);
+  
+        const formattedQuery = searchQuery.charAt(0) === '#' ? searchQuery : `#${searchQuery}`;
+        const orderData = await axios.post("https://lagaffe-backend.onrender.com/abnormalLoss/findLoss", {orderId: formattedQuery}, {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+  
+        if (orderData.data.success) {
+          const obj = [{
+            orderId: orderData.data.data.orderId,
+            issueType: orderData.data.data.issueType === "return" ? "Return" : "Weight Discrepancy",
+            details: orderData.data.data.issueType === "return" ? orderData.data.data.returnDetails : orderData.data.data.weightDiscrepancy,
+            dateReported: orderData.data.data.dateReported.substring(0, 10),
+          }]
+          setFlteredLossed(obj);
+        } else {
+          setFlteredLossed([]); // No matching orders
+        }
+      } catch (error) {
+        console.error("Error during search:", error);
+        setFlteredLossed([]);
+      } finally {
+        setIsLoading(false);
+      }
+    };
     performanceSearch();
   }, [searchQuery])
 
