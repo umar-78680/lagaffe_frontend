@@ -17,6 +17,7 @@ const AbnormalLossPage = () => {
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const [filteredLosses, setFlteredLossed] = useState([]);
 
   const [lossDetails, setLossDetails] = useState({
     orderId: "",
@@ -185,6 +186,7 @@ const AbnormalLossPage = () => {
             return obj;
           })
           setLossesDetails(dataArray);
+          setFlteredLossed(dataArray);
           setTotalPage(Math.ceil(response.data.total / 10));
         }
         else {
@@ -200,9 +202,24 @@ const AbnormalLossPage = () => {
     fetDetails();
   }, [page, selectedFilter, reload])
 
-  const filteredLosses = lossesDetails.filter(
-    (loss) => loss.orderId.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+
+  useEffect(() => {
+
+    const performanceSearch = () => {
+      const filterLoss = lossesDetails.filter(
+        (loss) => loss.orderId.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+
+      if (filterLoss.length > 0) {
+        setFlteredLossed(filterLoss);
+      }
+      else {
+        setFlteredLossed([]);
+      }
+    }
+
+    performanceSearch();
+  }, [searchQuery])
 
   return (
     <div className="abnormal-loss-page">
@@ -245,25 +262,25 @@ const AbnormalLossPage = () => {
 
       {
         !isLoading && <div className="losses-list">
-        {filteredLosses.length > 0 ? (
-          filteredLosses.map((loss, index) => (
-            <div className="loss-item" key={index}>
-              <span>{loss.orderId}</span>
-              <span>{loss.issueType}</span>
-              <span>₹{formatIndianPrice(loss.details)}</span>
-              <span>{loss.dateReported}</span>
-              <FaEdit className="edit-icon" onClick={() => handleEditClick(loss)} />
-              <MdDelete className="delete-icon" onClick={() => handleDelete(loss.orderId)} />
-            </div>
-          ))
-        ) : (
-          <p>No records found.</p>
-        )}
-      </div>
+          {filteredLosses.length > 0 ? (
+            filteredLosses.map((loss, index) => (
+              <div className="loss-item" key={index}>
+                <span>{loss.orderId}</span>
+                <span>{loss.issueType}</span>
+                <span>₹{formatIndianPrice(loss.details)}</span>
+                <span>{loss.dateReported}</span>
+                <FaEdit className="edit-icon" onClick={() => handleEditClick(loss)} />
+                <MdDelete className="delete-icon" onClick={() => handleDelete(loss.orderId)} />
+              </div>
+            ))
+          ) : (
+            <p>No records found.</p>
+          )}
+        </div>
       }
 
 
-      
+
 
       {/* Edit Modal */}
       {modalOpen && (
