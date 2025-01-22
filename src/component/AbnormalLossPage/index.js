@@ -203,7 +203,7 @@ const AbnormalLossPage = () => {
 
   const filteredLosses = lossesDetails.filter(
     (loss) => loss.orderId.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  ).sort((a,b) => new Date(b.dateReported) - new Date(a.dateReported));
 
   return (
     <div className="abnormal-loss-page">
