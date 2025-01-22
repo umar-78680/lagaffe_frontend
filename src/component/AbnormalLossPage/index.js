@@ -175,7 +175,6 @@ const AbnormalLossPage = () => {
         }
         if (response.data.success) {
           setTotalPage(Math.ceil(response.data.total / 10));
-          console.log("total", response.data.total);
           const dataArray = response.data.data.map((item) => {
             const obj = {
               orderId: item.orderId,
@@ -203,7 +202,7 @@ const AbnormalLossPage = () => {
 
   const filteredLosses = lossesDetails.filter(
     (loss) => loss.orderId.toLowerCase().includes(searchQuery.toLowerCase())
-  ).sort((a,b) => new Date(b.dateReported) - new Date(a.dateReported));
+  );
 
   return (
     <div className="abnormal-loss-page">
