@@ -165,6 +165,7 @@ const navigate = useNavigate();
         amount: formatIndianPrice(additionalData ? additionalData.totalAmount : wooData.total),
         orderDate: wooData.date_created.substring(0, 10),
         paymentMode: wooData.payment_method === "razorpay" ? "Prepaid" : wooData.payment_method,
+        isShippingAdded: additionalData ? true : false,
       };
     };
   
