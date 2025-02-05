@@ -509,12 +509,17 @@ const Homepage = () => {
 
   const handleSubmit = useCallback(async () => {
     const { startDate, endDate } = getDateRange(dateType, customRange);
+
+    console.log(`Fetching orders from ${startDate.toISOString()} to ${endDate.toISOString()}`);
+    
     setIsLoading(true);
 
     const [processingOrders, completedOrders] = await Promise.all([
       fetchOrdersByDate(startDate, endDate, 'processing', "date_created"),
       fetchOrdersByDate(startDate, endDate, 'completed', "date_created"),
     ]);
+
+    console.log([...processingOrders, ...completedOrders]);
 
     if (!processingOrders.length && !completedOrders.length) {
       alert('No orders found for the selected date range.');
