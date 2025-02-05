@@ -33,7 +33,8 @@ export const getDateRange = (dateType, customRange = {}) => {
     endDate = new Date(now);
   } else if (dateType === 'thisMonth') {
     // Change: Start from the beginning of the current year
-    startDate = new Date(Date.UTC(now.getFullYear(), 0, 1)); 
+    startDate = new Date(now);
+    startDate.setDate(1);
     endDate = new Date(now);
   } else if (dateType === 'lastMonth') {
     const prevMonth = now.getMonth() - 1;
