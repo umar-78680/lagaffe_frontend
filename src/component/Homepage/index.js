@@ -579,7 +579,7 @@ const Homepage = () => {
         <div className="revenue-container">
           {['grossRevenue', 'netRevenue', 'upcomingRevenue', 'grossProfit', 'netProfit'].map((key) => (
             <div className="card" key={key}>
-              <div className="card-icon">{key.replace(/([A-Z])/g, ' $1')}</div>
+              <div className="card-icon">{key.replace(/([A-Z])/g, ' $1').charAt(0).toUpperCase()}{key.replace(/([A-Z])/g, ' $1').substring(1)}</div>
               <div>₹{data[key]}</div>
             </div>
           ))}
